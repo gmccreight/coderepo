@@ -1,0 +1,3 @@
+#!/bin/bash
+
+add-apt-repository ppa:dotcloud/lxc-docker -y
