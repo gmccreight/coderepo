@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sudo ./dockerize/_add_ppa
+sudo ./dockerize/_set_locale_update_and_upgrade
+sudo ./dockerize/_install_docker

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+cat >> /etc/apt/sources.list <<ENDOFFILE
+
+deb http://ppa.launchpad.net/dotcloud/lxc-docker/ubuntu precise main 
+deb-src http://ppa.launchpad.net/dotcloud/lxc-docker/ubuntu precise main 
+ENDOFFILE

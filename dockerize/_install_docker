@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# I say force-yes because I don't care about authenticating the lxc-docker package
+sudo apt-get install lxc-docker -y --force-yes
