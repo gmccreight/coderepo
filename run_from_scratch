@@ -1,5 +1,5 @@
 #!/bin/bash
 
-vagrant destroy
+vagrant destroy -f
 vagrant up
 vagrant ssh -c "cd /vagrant/c_check; ./build"
