@@ -1,5 +1,5 @@
 #include "code.h"
-#include "../c_check_framework_code/src/check.h"
+#include "/check-0.9.11/src/check.h"
 #include <stdio.h>
 
 START_TEST (test_create_push_pop_delete)

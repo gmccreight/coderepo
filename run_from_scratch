@@ -2,4 +2,14 @@
 
 vagrant destroy -f
 vagrant up
-vagrant ssh -c "cd /vagrant/c_check; ./build"
+
+echo "building and running the first time... slow"
+vagrant ssh -c "cd /vagrant/c_check; ./docker_build; ./docker_run"
+
+echo "building and running the second time... should be fast"
+vagrant ssh -c "cd /vagrant/c_check; ./docker_build; ./docker_run"
+
+echo "building and running the third time... should be fast"
+vagrant ssh -c "cd /vagrant/c_check; ./docker_build; ./docker_run"
+
+echo "note: we build and run so that changes can be made in the 'code' directory and the build process will update the image"

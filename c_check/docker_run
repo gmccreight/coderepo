@@ -1,0 +1,1 @@
+docker run gmccreight/c_check /bin/bash ./c_check_runner

@@ -1,7 +1,0 @@
-cd shared/code
-
-gcc -o code.o -c code.c
-gcc -o unittests.o -c unittests.c
-gcc -o unittests ../c_check_framework_code/src/*.o code.o unittests.o
-ls -l
-./unittests
