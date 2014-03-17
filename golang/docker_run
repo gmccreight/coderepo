@@ -1,0 +1,1 @@
+docker run gmccreight/golang /bin/bash ./golang_runner

@@ -1,0 +1,6 @@
+wget http://go.googlecode.com/files/go1.2.1.linux-amd64.tar.gz
+tar -zxvf go*.tar.gz
+rm go*.tar.gz
+# binary distributions assume they will be installed at /usr/local/go
+# Otherwise, you must set the GOROOT environment variable
+sudo mv /go /usr/local
