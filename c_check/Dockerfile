@@ -11,4 +11,3 @@ ADD c_check_installer c_check_installer
 RUN bash ./c_check_installer
 
 ADD c_check_runner c_check_runner
-ADD code code

@@ -1,4 +1,6 @@
-cd code
+cp -a code code_working_dir
+
+cd code_working_dir
 
 gcc -o code.o -c code.c
 gcc -I/check-framework/ -o unittests.o -c unittests.c

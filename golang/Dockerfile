@@ -10,4 +10,3 @@ ADD golang_installer golang_installer
 RUN bash ./golang_installer
 
 ADD golang_runner golang_runner
-ADD code code
