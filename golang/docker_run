@@ -1,1 +1,1 @@
-docker run -t -i -v /vagrant/golang/code:/code:ro gmccreight/golang /bin/bash ./golang_runner
+docker run -t -i -v /vagrant/golang/code:/code:ro codefluent/golang /bin/bash ./runner

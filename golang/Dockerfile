@@ -6,7 +6,7 @@ RUN apt-get update
 
 RUN apt-get install -y wget
 
-ADD golang_installer golang_installer
-RUN bash ./golang_installer
+ADD installer installer
+RUN bash ./installer
 
-ADD golang_runner golang_runner
+ADD runner runner

@@ -3,6 +3,5 @@
 vagrant destroy -f
 vagrant up
 
-echo "building and running"
-echo "note: we build and run so that changes can be made in the 'code' directory and the build process will update the image before running it again"
-vagrant ssh -c "cd /vagrant/c_check; ./docker_build; ./docker_run"
+vagrant ssh -c "cd /vagrant/c_check; ./docker_build"
+vagrant ssh -c "cd /vagrant/c_check; ./docker_run"

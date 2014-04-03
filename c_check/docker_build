@@ -1,1 +1,1 @@
-docker build -t gmccreight/c_check .
+docker build -t codefluent/c_check .

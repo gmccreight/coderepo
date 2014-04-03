@@ -1,1 +1,1 @@
-docker build -t gmccreight/golang .
+docker build -t codefluent/golang .
