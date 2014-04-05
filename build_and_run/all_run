@@ -1,0 +1,9 @@
+#!/bin/bash
+
+source shared
+
+for example_name in `ls ../runner/example_code`
+do 
+  runner_name=`cat ../runner/example_code/$example_name/Runner`
+  run_in_runner "./docker_run /vagrant/runner/example_code/$example_name $runner_name"
+done

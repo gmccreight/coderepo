@@ -1,0 +1,8 @@
+#!/bin/bash
+
+source shared
+
+for runner_name in `ls ../runner/runners`
+do 
+  run_in_runner "./docker_build $runner_name"
+done

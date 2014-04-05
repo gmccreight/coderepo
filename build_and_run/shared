@@ -1,0 +1,7 @@
+#!/bin/bash
+
+function run_in_runner {
+  ssh_command="cd /vagrant/runner; $1"
+  #echo $ssh_command
+  vagrant ssh -c "$ssh_command"
+}

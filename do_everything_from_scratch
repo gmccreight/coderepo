@@ -1,0 +1,9 @@
+#!/bin/bash
+
+vagrant destroy -f
+vagrant up
+
+(
+  cd build_and_run
+  ./all_build_and_run
+)
