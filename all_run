@@ -1,0 +1,17 @@
+#!/bin/bash
+
+function run_in_runner {
+  ssh_command="cd /vagrant/runner; $1"
+  #echo $ssh_command
+  vagrant ssh -c "$ssh_command"
+}
+
+for runner_name in `ls runner/runners`
+do 
+  run_in_runner "./docker_build $runner_name"
+done
+
+for example_name in `ls runner/example_code`
+do 
+  run_in_runner "./docker_run /vagrant/runner/example_code/$example_name $example_name"
+done

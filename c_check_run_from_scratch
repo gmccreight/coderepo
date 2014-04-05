@@ -1,7 +1,0 @@
-#!/bin/bash
-
-vagrant destroy -f
-vagrant up
-
-vagrant ssh -c "cd /vagrant/c_check; ./docker_build"
-vagrant ssh -c "cd /vagrant/c_check; ./docker_run"

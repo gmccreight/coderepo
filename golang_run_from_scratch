@@ -1,6 +1,0 @@
-#!/bin/bash
-
-vagrant destroy -f
-vagrant up
-vagrant ssh -c "cd /vagrant/golang; ./docker_build"
-vagrant ssh -c "cd /vagrant/golang; ./docker_run"
