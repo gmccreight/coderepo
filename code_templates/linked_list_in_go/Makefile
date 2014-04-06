@@ -6,4 +6,4 @@ GOFILES=\
 
 include $(GOROOT)/src/Make.pkg
 
-#ogfileid:32
+#cffileid:32
