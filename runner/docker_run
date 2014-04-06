@@ -4,6 +4,6 @@ path_to_mount_as_code=$1
 runner_name=$2
 
 (
-  cd runners/$runner_name
+  cd runner_containers/$runner_name
   docker run -t -i -v $path_to_mount_as_code:/code:ro codefluent/$runner_name /bin/bash ./runner
 )

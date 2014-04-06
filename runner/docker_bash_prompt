@@ -3,6 +3,6 @@
 runner_name=$1
 
 (
-  cd runners/$runner_name
+  cd runner_containers/$runner_name
   docker run -i -t codefluent/$runner_name /bin/bash
 )

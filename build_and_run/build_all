@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for runner_name in `ls ../runner/runners`
+for runner_name in `ls ../runner/runner_containers`
 do 
   ./build_one $runner_name
 done
