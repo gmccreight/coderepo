@@ -2,8 +2,8 @@
 
 source shared
 
-for example_name in `ls ../runner/example_code`
+for example_name in `ls ../code_templates`
 do 
-  runner_name=`cat ../runner/example_code/$example_name/Runner`
-  run_in_runner "./docker_run /vagrant/runner/example_code/$example_name $runner_name"
+  runner_name=`cat ../code_templates/$example_name/Runner`
+  run_in_runner "./docker_run /vagrant/code_templates/$example_name $runner_name"
 done
