@@ -1,0 +1,2 @@
+cd code
+runhaskell unittests.hs

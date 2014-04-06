@@ -1,0 +1,1 @@
+sudo apt-get install ghc6 libghc6-mtl-dev libghc6-hunit-dev -y
