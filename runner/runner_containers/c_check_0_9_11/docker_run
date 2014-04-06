@@ -1,1 +1,0 @@
-docker run -t -i -v /vagrant/c_check/code:/code:ro codefluent/c_check /bin/bash ./runner
