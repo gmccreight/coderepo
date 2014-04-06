@@ -6,4 +6,5 @@ vagrant up
 (
   cd build_and_run
   ./build_and_run_all
+  ./run_all_with_simple_report
 )
