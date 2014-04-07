@@ -1,0 +1,6 @@
+cd code
+python unittests.py 2>&1 | tee /run_results
+
+ran_some_tests=`tail -n 3 /run_results | head -n 1 | egrep 'Ran [1-9][0-9]* test'`
+had_no_problems=`tail -n 1 /run_results | egrep '^OK'`
+(( [[ $ran_some_tests && $had_no_problems ]] ) && echo CF_OK) || echo CF_NOT_OK
