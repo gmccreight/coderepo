@@ -5,6 +5,7 @@ vagrant up
 
 vagrant ssh -c "cd /vagrant; ./api/install_latest_node.sh"
 vagrant ssh -c "cd /vagrant; ./api/install_express.sh"
+vagrant ssh -c "cd /vagrant/api/app; sudo npm install -g"
 
 (
   cd build_and_run
