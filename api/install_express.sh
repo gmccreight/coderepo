@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
-npm install -g express
+sudo npm install -g express
+sudo npm install -g express-generator@4
