@@ -14,7 +14,7 @@ router.get('/', function(req, res) {
 
   template = req.query.template || "factorial_clojure";
 
-  exec("cd ../../; ./run_one_from_node " + template, puts);
+  exec("./run_a_template " + template, puts);
 });
 
 module.exports = router;
