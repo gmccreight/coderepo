@@ -1,9 +1,23 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
+var sys = require('sys')
+var exec = require('child_process').exec;
+
+// /?template=factorial_in_haskell
 router.get('/', function(req, res) {
-  res.render('index', { title: 'Express' });
+
+  function puts(error, stdout, stderr) {
+    console.log("error " + error);
+    console.log("stdout " + stdout);
+    console.log("stderr " + stderr);
+    runner_results = {result: stdout}
+    res.json(runner_results);
+  }
+
+  template = req.query.template || "factorial_clojure";
+
+  exec("cd ../../; ./run_one_from_node " + template, puts);
 });
 
 module.exports = router;
