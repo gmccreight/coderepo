@@ -8,9 +8,6 @@ var exec = require('child_process').exec;
 router.get('/', function(req, res) {
 
   function puts(error, stdout, stderr) {
-    console.log("error " + error);
-    console.log("stdout " + stdout);
-    console.log("stderr " + stderr);
     runner_results = {result: stdout}
     res.json(runner_results);
   }
