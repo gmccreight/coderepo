@@ -9,6 +9,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/precise/current/precise-server-cloudimg-amd64-vagrant-disk1.box"
 
+  config.vm.network "forwarded_port", guest: 3000, host: 8080
+
   config.vm.provision "docker" do |d|
     d.run "ubuntu",
       cmd: "bash -l",
