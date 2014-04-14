@@ -8,7 +8,8 @@ var exec = require('child_process').exec;
 router.get('/', function(req, res) {
 
   function puts(error, stdout, stderr) {
-    runner_results = {result: stdout}
+    var did_pass = !! stdout.match(/CF_OK/);
+    var runner_results = {stdout: stdout, did_pass: did_pass};
     res.json(runner_results);
   }
 
