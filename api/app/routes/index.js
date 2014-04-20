@@ -20,7 +20,7 @@ router.get('/', function(req, res) {
   exec("./run_a_template " + template, puts);
 });
 
-// curl -X POST -H "Content-Type: application/json" -d '{"files":[{"name":"code.h","value":"this would be header code"}, {"name":"code.c","value":"this would be body code"}]}' http://localhost:8080/
+// curl -X POST -H "Content-Type: application/json" -d '{"files":[{"name":"Runner","value":"clojure_1_6_0"}, {"name":"code.h","value":"this would be header code"}, {"name":"code.c","value":"this would be body code"}]}' http://localhost:8080/
 
 router.post('/', function(req, res) {
 
