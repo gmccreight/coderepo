@@ -30,10 +30,15 @@ router.post('/', function(req, res) {
 
   var files = req.body.files;
 
+  function afterRun(error, stdout, stderr) {
+    var did_pass = !! stdout.match(/CF_OK/);
+    var runner_results = {stdout: stdout, did_pass: did_pass, stderr: stderr};
+    res.json(runner_results);
+  }
+
   var aFileProcessingWasCompleted = function() {
     if (numFilesWritten === files.length) {
-      var results = {done: true};
-      res.json(results);
+      exec("./run_a_directory " + tempDirPath, afterRun);
     }
   };
 
@@ -44,7 +49,6 @@ router.post('/', function(req, res) {
     files.forEach(function(file) {
 
       var newPath = tempDirPath + "/" + file.name;
-      console.log(newPath);
       var data = file.value;
 
       fs.writeFile(newPath, data, function (err) {
