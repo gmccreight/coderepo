@@ -4,6 +4,7 @@ var router = express.Router();
 var sys = require('sys')
 var exec = require('child_process').exec;
 var fs = require('fs');
+var tmp = require('tmp');
 
 // /?template=factorial_in_haskell
 router.get('/', function(req, res) {
@@ -23,6 +24,8 @@ router.get('/', function(req, res) {
 
 router.post('/', function(req, res) {
 
+  var tempDirPath = null;
+
   var numFilesWritten = 0;
 
   var files = req.body.files;
@@ -34,14 +37,21 @@ router.post('/', function(req, res) {
     }
   };
 
-  files.forEach(function(file) {
+  tmp.dir(function _tempDirCreated(err, path) {
 
-    var newPath = file.name;
-    var data = file.value;
+    tempDirPath = path;
 
-    fs.writeFile(newPath, data, function (err) {
-      numFilesWritten = numFilesWritten + 1;
-      aFileProcessingWasCompleted();
+    files.forEach(function(file) {
+
+      var newPath = tempDirPath + "/" + file.name;
+      console.log(newPath);
+      var data = file.value;
+
+      fs.writeFile(newPath, data, function (err) {
+        numFilesWritten = numFilesWritten + 1;
+        aFileProcessingWasCompleted();
+      });
+
     });
 
   });
