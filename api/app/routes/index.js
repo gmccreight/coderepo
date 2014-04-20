@@ -20,7 +20,8 @@ router.get('/', function(req, res) {
   exec("./run_a_template " + template, puts);
 });
 
-// curl -X POST -H "Content-Type: application/json" -d '{"files":[{"name":"Runner","value":"clojure_1_6_0"}, {"name":"code.clj","value":"this would be the code"}, {"name":"unittests.clj","value":"this would be the tests"}]}' http://localhost:8080/
+// Try this out.  From the api directory, type:
+// curl -X POST -H "Content-Type: application/json" --data-binary @factorial_clojure_post_body.json http://localhost:8080/
 
 router.post('/', function(req, res) {
 
