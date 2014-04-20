@@ -6,22 +6,7 @@ var exec = require('child_process').exec;
 var fs = require('fs');
 var tmp = require('tmp');
 
-// /?template=factorial_in_haskell
-router.get('/', function(req, res) {
-
-  function puts(error, stdout, stderr) {
-    var did_pass = !! stdout.match(/CF_OK/);
-    var runner_results = {stdout: stdout, did_pass: did_pass};
-    res.json(runner_results);
-  }
-
-  template = req.query.template || "factorial_clojure";
-
-  exec("./run_a_template " + template, puts);
-});
-
-// Try this out.  From the api directory, type:
-// curl -X POST -H "Content-Type: application/json" --data-binary @factorial_clojure_post_body.json http://localhost:8080/
+// the curl_test.sh file excercises this method
 
 router.post('/', function(req, res) {
 
