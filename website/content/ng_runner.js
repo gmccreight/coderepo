@@ -1,5 +1,5 @@
 angular.module('CodeFluentApp', [])
-.controller("MainRunnerCtrl", function ($scope) {
+.controller("RunnerCtrl", function ($scope) {
 
   $scope.getData = function() {return "hello";};
  
