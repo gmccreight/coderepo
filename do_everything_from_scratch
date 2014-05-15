@@ -10,6 +10,10 @@ vagrant ssh -c "cd /vagrant/api/app; sudo npm install -g"
 
 # For the static website
 vagrant ssh -c "cd /vagrant/; sudo gem install nanoc"
+vagrant ssh -c "cd /vagrant/; sudo gem install adsf"
+
+# For the script that updates the code templates for the website
+vagrant ssh -c "cd /vagrant/; sudo gem install json"
 
 (
   cd build_and_run
