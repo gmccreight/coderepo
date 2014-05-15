@@ -12,12 +12,19 @@
 
 <script src="../ng_runner.js" type="text/javascript"></script>
 
-<div id="runner" ng-controller="RunnerCtrl">
+<div id="runner" ng-controller="RunnerCtrl" ng-init="init()">
   <div ng-show="hasError()" class="error">
     {{error}}
   </div>
+  <div ng-show="isRunning" class="running">
+    Running...
+  </div>
   <div ng-show="didPass" class="didPass">
     PASS
+  </div>
+  <div ng-repeat="file in files">
+    {{file.name}}
+    <textarea ng-model="file.value"> </textarea>
   </div>
   <div ng-click="runCode()">Run It</div>
 </div>

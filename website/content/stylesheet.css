@@ -71,6 +71,11 @@ a:hover {
   color:green;
 }
 
+#runner textarea {
+  width:100%;
+  height:200px;
+}
+
 #sidebar {
   position: absolute;
 
