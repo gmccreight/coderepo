@@ -8,7 +8,9 @@ window.codeFluentApp.controller("RunnerCtrl", function ($scope, $http) {
   $scope.isRunning = false;
 
   $scope.init = function() {
-    $scope.files = $scope.templateFor("factorial_clojure").files;
+    $scope.files = $scope.templateFor("factorial_in_haskell").files;
+    //$scope.files = $scope.templateFor("kmp_python").files;
+    //$scope.files = $scope.templateFor("factorial_clojure").files;
     $scope.currentFile = $scope.files[0].name;
   };
 
