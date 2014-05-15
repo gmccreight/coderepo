@@ -1,9 +1,8 @@
-Crashlog created at Tue May 13 23:02:31 +0000 2014
+Crashlog created at Wed May 14 00:05:20 +0000 2014
 
 ===== MESSAGE:
 
-SyntaxError: compile error
-./Rules:45: syntax error, unexpected $end, expecting kEND
+Errno::EADDRINUSE: Address already in use - bind(2)
 
 ===== COMPILATION STACK:
 
@@ -11,26 +10,32 @@ SyntaxError: compile error
 
 ===== STACK TRACE:
 
-  0. ./Rules:45:in `load'
-  1. /var/lib/gems/1.8/gems/nanoc-3.6.9/lib/nanoc/base/compilation/compiler.rb:120:in `load'
-  2. /var/lib/gems/1.8/gems/nanoc-3.6.9/lib/nanoc/base/source_data/site.rb:250:in `load'
-  3. /var/lib/gems/1.8/gems/nanoc-3.6.9/lib/nanoc/cli/command_runner.rb:63:in `load_site'
-  4. /var/lib/gems/1.8/gems/nanoc-3.6.9/lib/nanoc/cli/commands/compile.rb:388:in `run'
-  5. /var/lib/gems/1.8/gems/nanoc-3.6.9/lib/nanoc/cli/command_runner.rb:14:in `call'
-  6. /var/lib/gems/1.8/gems/nanoc-3.6.9/lib/nanoc/cli/error_handler.rb:70:in `handle_while'
-  7. /var/lib/gems/1.8/gems/nanoc-3.6.9/lib/nanoc/cli/error_handler.rb:26:in `handle_while'
-  8. /var/lib/gems/1.8/gems/nanoc-3.6.9/lib/nanoc/cli/command_runner.rb:13:in `call'
-  9. /var/lib/gems/1.8/gems/cri-2.6.0/lib/cri/command_dsl.rb:223:in `runner'
-  10. /var/lib/gems/1.8/gems/cri-2.6.0/lib/cri/command.rb:298:in `call'
-  11. /var/lib/gems/1.8/gems/cri-2.6.0/lib/cri/command.rb:298:in `run_this'
-  12. /var/lib/gems/1.8/gems/cri-2.6.0/lib/cri/command.rb:251:in `run'
-  13. /var/lib/gems/1.8/gems/cri-2.6.0/lib/cri/command.rb:264:in `run'
-  14. /var/lib/gems/1.8/gems/nanoc-3.6.9/lib/nanoc/cli.rb:59:in `run'
-  15. /var/lib/gems/1.8/gems/nanoc-3.6.9/lib/nanoc/cli/error_handler.rb:70:in `handle_while'
-  16. /var/lib/gems/1.8/gems/nanoc-3.6.9/lib/nanoc/cli/error_handler.rb:26:in `handle_while'
-  17. /var/lib/gems/1.8/gems/nanoc-3.6.9/lib/nanoc/cli.rb:57:in `run'
-  18. /var/lib/gems/1.8/gems/nanoc-3.6.9/bin/nanoc:19
-  19. /usr/local/bin/nanoc:19:in `load'
+  0. /usr/lib/ruby/1.8/webrick/utils.rb:73:in `initialize'
+  1. /usr/lib/ruby/1.8/webrick/utils.rb:73:in `new'
+  2. /usr/lib/ruby/1.8/webrick/utils.rb:73:in `create_listeners'
+  3. /usr/lib/ruby/1.8/webrick/utils.rb:70:in `each'
+  4. /usr/lib/ruby/1.8/webrick/utils.rb:70:in `create_listeners'
+  5. /usr/lib/ruby/1.8/webrick/server.rb:75:in `listen'
+  6. /usr/lib/ruby/1.8/webrick/server.rb:63:in `initialize'
+  7. /usr/lib/ruby/1.8/webrick/httpserver.rb:24:in `initialize'
+  8. /var/lib/gems/1.8/gems/rack-1.5.2/lib/rack/handler/webrick.rb:11:in `new'
+  9. /var/lib/gems/1.8/gems/rack-1.5.2/lib/rack/handler/webrick.rb:11:in `run'
+  10. /var/lib/gems/1.8/gems/nanoc-3.6.9/lib/nanoc/cli/commands/view.rb:57:in `run'
+  11. /var/lib/gems/1.8/gems/nanoc-3.6.9/lib/nanoc/cli/command_runner.rb:14:in `call'
+  12. /var/lib/gems/1.8/gems/nanoc-3.6.9/lib/nanoc/cli/error_handler.rb:70:in `handle_while'
+  13. /var/lib/gems/1.8/gems/nanoc-3.6.9/lib/nanoc/cli/error_handler.rb:26:in `handle_while'
+  14. /var/lib/gems/1.8/gems/nanoc-3.6.9/lib/nanoc/cli/command_runner.rb:13:in `call'
+  15. /var/lib/gems/1.8/gems/cri-2.6.0/lib/cri/command_dsl.rb:223:in `runner'
+  16. /var/lib/gems/1.8/gems/cri-2.6.0/lib/cri/command.rb:298:in `call'
+  17. /var/lib/gems/1.8/gems/cri-2.6.0/lib/cri/command.rb:298:in `run_this'
+  18. /var/lib/gems/1.8/gems/cri-2.6.0/lib/cri/command.rb:251:in `run'
+  19. /var/lib/gems/1.8/gems/cri-2.6.0/lib/cri/command.rb:264:in `run'
+  20. /var/lib/gems/1.8/gems/nanoc-3.6.9/lib/nanoc/cli.rb:59:in `run'
+  21. /var/lib/gems/1.8/gems/nanoc-3.6.9/lib/nanoc/cli/error_handler.rb:70:in `handle_while'
+  22. /var/lib/gems/1.8/gems/nanoc-3.6.9/lib/nanoc/cli/error_handler.rb:26:in `handle_while'
+  23. /var/lib/gems/1.8/gems/nanoc-3.6.9/lib/nanoc/cli.rb:57:in `run'
+  24. /var/lib/gems/1.8/gems/nanoc-3.6.9/bin/nanoc:19
+  25. /usr/local/bin/nanoc:19:in `load'
 
 ===== VERSION INFORMATION:
 
@@ -43,27 +48,28 @@ Linux vagrant-ubuntu-precise-64 3.2.0-56-generic #86-Ubuntu SMP Wed Oct 23 09:20
 
 ===== INSTALLED GEMS:
 
+  cri 2.6.0
+  timers 1.1.0
   nanoc 3.6.9
   colored 1.2
-  cri 2.6.0
+  adsf 1.2.0
+  thor 0.19.1
+  rack 1.5.2
 
 ===== ENVIRONMENT:
 
 HOME => "/home/vagrant"
 LANG => "en_US.UTF-8"
-LESSCLOSE => "/usr/bin/lesspipe %s %s"
-LESSOPEN => "| /usr/bin/lesspipe %s"
 LOGNAME => "vagrant"
-LS_COLORS => "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lz=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:"
 MAIL => "/var/mail/vagrant"
-OLDPWD => "/vagrant"
+OLDPWD => "/home/vagrant"
 PATH => "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games"
 PWD => "/vagrant/website"
 SHELL => "/bin/bash"
-SHLVL => "1"
-SSH_CLIENT => "10.0.2.2 56489 22"
-SSH_CONNECTION => "10.0.2.2 56489 10.0.2.15 22"
-SSH_TTY => "/dev/pts/0"
+SHLVL => "2"
+SSH_CLIENT => "10.0.2.2 57621 22"
+SSH_CONNECTION => "10.0.2.2 57621 10.0.2.15 22"
+SSH_TTY => "/dev/pts/1"
 TERM => "xterm"
 USER => "vagrant"
 _ => "/usr/local/bin/nanoc"
@@ -74,12 +80,14 @@ _ => "/usr/local/bin/nanoc"
   1. /var/lib/gems/1.8/gems/colored-1.2/lib
   2. /var/lib/gems/1.8/gems/cri-2.6.0/lib
   3. /var/lib/gems/1.8/gems/nanoc-3.6.9/lib
-  4. /usr/local/lib/site_ruby/1.8
-  5. /usr/local/lib/site_ruby/1.8/x86_64-linux
-  6. /usr/local/lib/site_ruby
-  7. /usr/lib/ruby/vendor_ruby/1.8
-  8. /usr/lib/ruby/vendor_ruby/1.8/x86_64-linux
-  9. /usr/lib/ruby/vendor_ruby
-  10. /usr/lib/ruby/1.8
-  11. /usr/lib/ruby/1.8/x86_64-linux
-  12. .
+  4. /var/lib/gems/1.8/gems/rack-1.5.2/lib
+  5. /var/lib/gems/1.8/gems/adsf-1.2.0/lib
+  6. /usr/local/lib/site_ruby/1.8
+  7. /usr/local/lib/site_ruby/1.8/x86_64-linux
+  8. /usr/local/lib/site_ruby
+  9. /usr/lib/ruby/vendor_ruby/1.8
+  10. /usr/lib/ruby/vendor_ruby/1.8/x86_64-linux
+  11. /usr/lib/ruby/vendor_ruby
+  12. /usr/lib/ruby/1.8
+  13. /usr/lib/ruby/1.8/x86_64-linux
+  14. .

@@ -62,6 +62,10 @@ a:hover {
   list-style-type: square;
 }
 
+#runner .error {
+  color:red;
+}
+
 #sidebar {
   position: absolute;
 
