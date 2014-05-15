@@ -66,6 +66,11 @@ a:hover {
   color:red;
 }
 
+#runner .didPass {
+  font-size:24px;
+  color:green;
+}
+
 #sidebar {
   position: absolute;
 
