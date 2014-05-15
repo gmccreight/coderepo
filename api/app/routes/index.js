@@ -16,6 +16,11 @@ router.post('/', function(req, res) {
 
   var files = req.body.files;
 
+  if (! files) {
+    res.json({error: "no files were passed to the API"});
+    return;
+  }
+
   function afterRun(error, stdout, stderr) {
     var did_pass = !! stdout.match(/CF_OK/);
     var runner_results = {stdout: stdout, did_pass: did_pass, stderr: stderr};
