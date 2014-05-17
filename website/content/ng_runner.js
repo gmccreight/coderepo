@@ -6,11 +6,21 @@ window.codeFluentApp.controller("RunnerCtrl", function ($scope, $http) {
   $scope.files = undefined;
   $scope.currentFile = undefined;
   $scope.isRunning = false;
+  $scope.currentTemplate = "factorial_in_haskell";
 
   $scope.init = function() {
-    $scope.files = $scope.templateFor("factorial_in_haskell").files;
-    //$scope.files = $scope.templateFor("kmp_python").files;
-    //$scope.files = $scope.templateFor("factorial_clojure").files;
+    $scope.templateSelected();
+  };
+
+  $scope.resetOutput = function() {
+    $scope.error = "";
+    $scope.setDidPass(false);
+    $scope.setIsRunning(false);
+  };
+
+  $scope.templateSelected = function() {
+    $scope.resetOutput();
+    $scope.files = $scope.templateFor($scope.currentTemplate).files;
     $scope.currentFile = $scope.files[0].name;
   };
 
@@ -31,8 +41,7 @@ window.codeFluentApp.controller("RunnerCtrl", function ($scope, $http) {
   };
 
   $scope.runCode = function() {
-    $scope.setError("");
-    $scope.setDidPass(false);
+    $scope.resetOutput();
     $scope.setIsRunning(true);
     var successCallback = function(data, status, headers, config) {
       $scope.setIsRunning(false);
@@ -54,6 +63,10 @@ window.codeFluentApp.controller("RunnerCtrl", function ($scope, $http) {
   $scope.getDataToPost = function() {
     return {files: $scope.files};
   };
+
+  $scope.codeTemplateNames = function() {
+    return Object.keys(window.code_templates);
+  }
 
   $scope.templateFor = function(name) {
     return window.code_templates[name];

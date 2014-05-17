@@ -18,6 +18,7 @@ title: Runner
   <div ng-show="didPass" class="didPass">
     PASS
   </div>
+  <select ng-model="currentTemplate" ng-options="templateName for templateName in codeTemplateNames()" ng-change="templateSelected()"></select>
   <div ng-repeat="file in files">
     {{file.name}}
     <textarea ng-model="file.value"> </textarea>
