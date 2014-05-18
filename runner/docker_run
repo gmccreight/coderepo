@@ -5,5 +5,5 @@ runner_name=$2
 
 (
   cd runner_containers/$runner_name
-  docker run -t --interactive=false -v $path_to_mount_as_code:/code:ro codefluent/$runner_name /bin/bash ./runner
+  sudo docker run -t --interactive=false -v $path_to_mount_as_code:/code:ro codefluent/$runner_name /bin/bash ./runner
 )
