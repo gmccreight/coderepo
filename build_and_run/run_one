@@ -4,5 +4,5 @@ source shared
 
 example_name=$1
 
-runner_name=`cat ../code_templates/$example_name/Runner`
-run_in_runner "./docker_run /vagrant/code_templates/$example_name $runner_name"
+runner_name=`cat ../shared_code_templates/$example_name/Runner`
+run_in_runner "./docker_run /vagrant/shared_code_templates/$example_name $runner_name"

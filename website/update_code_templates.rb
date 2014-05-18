@@ -9,7 +9,7 @@ class MyFile
 
   def template_names
     results = []
-    Find.find("../code_templates") do |path|
+    Find.find("../shared_code_templates") do |path|
       if FileTest.directory?(path)
         if File.basename(path)[0] == ?. and File.basename(path) != '.'
           Find.prune
@@ -19,12 +19,12 @@ class MyFile
         end
       end
     end
-    results.reject{|x| x == "code_templates"}.sort
+    results.reject{|x| x == "shared_code_templates"}.sort
   end
 
   def files_and_values_for_template(template_name)
     results = []
-    Find.find("../code_templates/#{template_name}") do |path|
+    Find.find("../shared_code_templates/#{template_name}") do |path|
       if ! FileTest.directory?(path)
         name = File.basename(path)
 

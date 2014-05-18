@@ -1,9 +1,9 @@
 #!/bin/bash
 
 example_name=$1
-runner_name=`cat ../../code_templates/$example_name/Runner`
+runner_name=`cat ../../shared_code_templates/$example_name/Runner`
 
 (
   cd ../../runner
-  ./docker_run /vagrant/code_templates/$example_name $runner_name
+  ./docker_run /vagrant/shared_code_templates/$example_name $runner_name
 )

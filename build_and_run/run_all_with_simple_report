@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for example_name in `ls ../code_templates`
+for example_name in `ls ../shared_code_templates`
 do 
   was_ok=`./run_one $example_name 2>&1 | egrep -o "^CF_[A-Z_]+"`
   echo "$was_ok $example_name"
