@@ -4,9 +4,9 @@ vagrant destroy -f
 vagrant up
 
 # For the node server that runs runner requests
-vagrant ssh -c "cd /vagrant; ./api/install_latest_node.sh"
-vagrant ssh -c "cd /vagrant; ./api/install_express.sh"
-vagrant ssh -c "cd /vagrant/api/app; sudo npm install -g"
+vagrant ssh -c "cd /vagrant; ./runner_api/install_latest_node.sh"
+vagrant ssh -c "cd /vagrant; ./runner_api/install_express.sh"
+vagrant ssh -c "cd /vagrant/runner_api/app; sudo npm install -g"
 
 # For the static website
 vagrant ssh -c "cd /vagrant/; sudo gem install nanoc"
