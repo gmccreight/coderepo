@@ -3,7 +3,6 @@
 require 'find'
 require 'fileutils'
 
-require 'rubygems'
 require 'json'
 
 class MyFile
