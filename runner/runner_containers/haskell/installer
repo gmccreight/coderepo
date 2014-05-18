@@ -1,0 +1,1 @@
+sudo apt-get install ghc libghc-mtl-dev libghc-hunit-dev -y
