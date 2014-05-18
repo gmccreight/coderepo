@@ -21,4 +21,3 @@ vagrant ssh -c "sudo docker pull ubuntu"
   ./build_and_run_all
   ./run_all_with_simple_report
 )
-
