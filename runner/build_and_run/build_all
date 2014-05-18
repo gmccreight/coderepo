@@ -1,0 +1,6 @@
+#!/bin/bash
+
+for runner_name in `ls ../runner_containers`
+do 
+  ./build_one $runner_name
+done

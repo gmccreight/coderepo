@@ -8,7 +8,7 @@ vagrant ssh -c "cd /vagrant/website;    ./installer.sh"
 vagrant ssh -c "cd /vagrant/runner;     ./installer.sh"
 
 (
-  cd build_and_run
+  cd runner/build_and_run
   ./build_and_run_all
   ./run_all_with_simple_report
 )

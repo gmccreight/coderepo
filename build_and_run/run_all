@@ -1,6 +1,0 @@
-#!/bin/bash
-
-for example_name in `ls ../shared_code_templates`
-do 
-  ./run_one $example_name
-done
