@@ -1,8 +1,0 @@
-wget -O check.tar.gz "http://downloads.sourceforge.net/project/check/check/0.9.11/check-0.9.11.tar.gz?r=&ts=1385773395&use_mirror=softlayer-ams"
-tar -xzf check.tar.gz
-mv check-* check-framework
-cd check-framework
-./configure
-make
-cd ..
-rm check.tar.gz

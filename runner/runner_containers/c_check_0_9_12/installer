@@ -1,0 +1,8 @@
+wget -O check.tar.gz "http://downloads.sourceforge.net/project/check/check/0.9.12/check-0.9.12.tar.gz"
+tar -xzf check.tar.gz
+mv check-* check-framework
+cd check-framework
+./configure
+make
+cd ..
+rm check.tar.gz
