@@ -12,6 +12,4 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network "forwarded_port", guest: 3000, host: 8080
   config.vm.network "forwarded_port", guest: 2345, host: 2345
 
-  config.vm.provision "docker", images: ["ubuntu"]
-
 end
