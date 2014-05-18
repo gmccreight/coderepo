@@ -26,8 +26,14 @@ class MyFile
     results = []
     Find.find("../code_templates/#{template_name}") do |path|
       if ! FileTest.directory?(path)
+        name = File.basename(path)
+
+        if name == ".DS_Store"
+          next
+        end
+
         h = {}
-        h[:name] = File.basename(path)
+        h[:name] = name
         h[:value] = File.read(path)
         results << h
       end
@@ -42,12 +48,6 @@ class Application
   def run
     results = {}
     MyFile.new.template_names().each do |template|
-
-      # [tag:fix:gem] these two don't work for some reason... fix soon
-      if ["linked_list_in_go", "linked_list_python"].include?(template)
-        next
-      end
-      puts template
       h = {:files => MyFile.new.files_and_values_for_template(template)}
       results[:"#{template}"] = h
     end
