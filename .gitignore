@@ -2,4 +2,5 @@
 .DS_Store
 npm-debug.log
 website/tmp/
+website/untracked_aws_info
 website/crash.log

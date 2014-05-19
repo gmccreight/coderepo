@@ -63,5 +63,6 @@ deploy:
     kind:                  fog
     provider:              aws
     bucket:                www.codefluent.us
-    aws_access_key_id: <%= ENV["CODEFLUENT_AWS_ACCESS_KEY_ID"] %>
-    aws_secret_access_key: <%= ENV["CODEFLUENT_AWS_SECRET_ACCESS_KEY"] %>
+    path_style: true
+    # aws_access_key_id: Is provided by appending untracked_aws_info to this file
+    # aws_secret_access_key: Is provided by appending untracked_aws_info to this file
