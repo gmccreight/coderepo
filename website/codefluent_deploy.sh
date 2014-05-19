@@ -7,4 +7,4 @@
 cp nanoc.yaml nanoc_backup_before_deploy.yaml
 cat untracked_aws_info >> nanoc.yaml
 nanoc deploy fog
-mv nanoc_backup_for_deploy.yaml nanoc.yaml
+mv nanoc_backup_before_deploy.yaml nanoc.yaml
