@@ -57,7 +57,18 @@ window.codeFluentApp.controller("RunnerCtrl", function ($scope, $http) {
         }
       }
     };
-    $http.post('http://localhost:8080/', $scope.getDataToPost()).success(successCallback);
+    var runnerUrl = $scope.getRunnerUrl();
+    $http.post(runnerUrl, $scope.getDataToPost()).success(successCallback);
+  };
+
+  /* [tag:refactor:gem] it would be better if decisions based on where you are are centralized */
+  $scope.getRunnerUrl = function() {
+    if ( window.location.hostname.match(/codefluent/) ) {
+      return 'http://runner.codefluent.us/';
+    }
+    else {
+      return 'http://localhost:8080/';
+    }
   };
 
   $scope.getDataToPost = function() {
