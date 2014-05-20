@@ -4,7 +4,7 @@
 
 In another terminal tab, you can do (or look into a guard version, which is better):
 
-    for i in {1..10000}; do nanoc; sleep 1; done
+    while (true); do nanoc; sleep 1; done
 
 If the code templates have been updated, you'll need to load them using:
 
