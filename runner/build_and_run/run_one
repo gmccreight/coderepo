@@ -4,5 +4,7 @@ source shared
 
 example_name=$1
 
+root_path=`runner_root_path`
+
 runner_name=`cat ../../shared_code_templates/$example_name/Runner`
-run_in_runner "./docker_run /vagrant/shared_code_templates/$example_name $runner_name"
+run_in_runner "./docker_run $root_path/shared_code_templates/$example_name $runner_name"

@@ -1,7 +1,36 @@
 #!/bin/bash
 
 function run_in_runner {
-  ssh_command="cd /vagrant/runner; $1"
-  #echo $ssh_command
-  vagrant ssh -c "$ssh_command"
+  if [ -d /home/vagrant ]; then
+    (
+      cd /vagrant/runner
+      myecho $1
+      bash -c "$1"
+    )
+  elif [ -d /home/ubuntu ]; then
+    (
+      cd ~/runner
+      myecho $1
+      bash -c "$1"
+    )
+  else
+    ssh_command="cd /vagrant/runner; $1"
+    myecho $ssh_command
+    vagrant ssh -c "$ssh_command"
+  fi
+}
+
+function runner_root_path {
+  if [ -d /home/vagrant ]; then
+    echo /vagrant
+  elif [ -d /Users ]; then
+    echo /vagrant
+  else
+    echo ~
+  fi
+}
+
+function myecho {
+  return 0
+  #echo $1
 }
