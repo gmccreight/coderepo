@@ -12,6 +12,17 @@ window.codeFluentApp.controller("RunnerCtrl", function ($scope, $http) {
     $scope.templateSelected();
   };
 
+  $scope.editableFiles = function() {
+    var results = [];
+    for (var i = 0; i < $scope.files.length; i++) { 
+      var file = $scope.files[i];
+      if (file.name  != "Runner") {
+        results.push(file);
+      }
+    }
+    return results;
+  };
+
   $scope.resetOutput = function() {
     $scope.error = "";
     $scope.setDidPass(false);
