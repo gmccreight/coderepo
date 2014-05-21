@@ -14,21 +14,31 @@
 <script src="../ng_runner.js" type="text/javascript"></script>
 
 <div id="runner" ng-controller="RunnerCtrl" ng-init="init()">
-  <div ng-show="hasError()" class="error">
+  <div class="selectTemplate">
+    <select ng-model="currentTemplate" ng-options="templateName for templateName in codeTemplateNames()" ng-change="templateSelected()"></select>
+  </div>
+  <div ng-click="runCode()" class="runCodeBtn">Run The Code</div>
+  <div class="runStatus">
+    <div ng-show="isRunning" class="running">
+      RUN
+    </div>
+    <div ng-show="didPass" class="didPass">
+      PASS
+    </div>
+    <div ng-show="hasError()" class="error">
+      ERROR
+    </div>
+  </div>
+  <div class="clearBoth"></div>
+  <div ng-show="hasError()" class="errorDetails">
     {{error}}
   </div>
-  <div ng-show="isRunning" class="running">
-    Running...
-  </div>
-  <div ng-show="didPass" class="didPass">
-    PASS
-  </div>
-  <select ng-model="currentTemplate" ng-options="templateName for templateName in codeTemplateNames()" ng-change="templateSelected()"></select>
   <div ng-repeat="file in editableFiles()">
-    {{file.name}}
-    <textarea ng-model="file.value"> </textarea>
+    <div class="filename">
+      {{file.name}}
+    </div>
+    <textarea ng-model="file.value"></textarea>
   </div>
-  <div ng-click="runCode()">Run It</div>
 </div>
     </div>
     <div id="sidebar">

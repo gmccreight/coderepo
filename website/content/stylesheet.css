@@ -2,7 +2,9 @@
   margin: 0;
   padding: 0;
 
-  font-family: Georgia, Palatino, serif;
+  //font-family: Georgia, Palatino, serif;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 400;
 }
 
 body {
@@ -20,6 +22,10 @@ a:visited {
 
 a:hover {
   color: #f90;
+}
+
+div.clearBoth {
+  clear:both;
 }
 
 #main {
@@ -62,18 +68,73 @@ a:hover {
   list-style-type: square;
 }
 
-#runner .error {
-  color:red;
+#runner {
+  width:800px;
 }
 
-#runner .didPass {
-  font-size:24px;
+#runner .selectTemplate {
+  float:left;
+}
+
+#runner .selectTemplate select {
+  width:268px;
+  padding:5px;
+  font-size:16px;
+  line-height:1;
+  border:0;
+  border-radius:6px;
+  height:42px;
+}
+
+#runner .selectTemplate select:hover {
+  cursor:pointer;
+}
+
+#runner .runCodeBtn {
+  background-color:#F7AD3C;
+  padding:10px;
+  border: 2px solid #E79D2C;
+  border-radius:6px;
+  float:left;
+  margin-left:20px;
+}
+
+#runner .runCodeBtn:hover {
+  background-color:#FFBD4C;
+  cursor:pointer;
+}
+
+#runner .runStatus {
+  float:left;
+  font-size:20px;
+  padding-top:10px;
+  margin-left:18px;
+}
+
+#runner .runStatus .didPass {
   color:green;
 }
 
+#runner .runStatus .error {
+  color:red;
+}
+
+#runner .errorDetails {
+  margin:20px 0;
+}
+
+#runner .filename {
+  margin-top:20px;
+  margin-bottom:6px;
+  color:#666;
+}
+
 #runner textarea {
-  width:100%;
+  width:800px;
   height:200px;
+  font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
+  border:1px solid #ccc;
+  padding:6px;
 }
 
 #sidebar {
