@@ -10,4 +10,3 @@ test4 = TestCase (assertEqual "factorial for 4" (24) (fac 4))
 test5 = TestCase (assertEqual "factorial for 5" (120) (fac 5))
 
 main = runTestTT $ TestList [test0, test1, test2, test3, test4, test5]
---cffileid:2

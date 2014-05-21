@@ -30,5 +30,3 @@ class linked_list:
             length += 1
             node = node.next
         return length
-
-#cffileid:14

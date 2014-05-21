@@ -11,5 +11,3 @@ func (e *Ele) insert(data interface{}) {
     }
     e.Next = &Ele{data, e.Next}
 }
-
-//cffileid:30

@@ -62,5 +62,3 @@ class TestKMPFunctions(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-
-#cffileid:36

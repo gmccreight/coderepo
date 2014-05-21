@@ -336,5 +336,3 @@ def kmpMatch(needle, haystack):
 
     # If we made it here, then no match was found.
     return None
-
-#cffileid:37

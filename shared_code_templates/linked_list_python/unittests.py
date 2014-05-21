@@ -30,5 +30,3 @@ class TestLinkedListFunctions(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-
-#cffileid:15

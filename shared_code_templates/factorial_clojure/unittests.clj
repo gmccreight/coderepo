@@ -14,5 +14,3 @@
 )
 
 (run-tests 'this.test.namespace)
-
-;cffileid:25

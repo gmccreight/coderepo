@@ -50,5 +50,3 @@ bool delete_stack(Node **stack) {
     }
 
     return true;
-}
-//cffileid:16

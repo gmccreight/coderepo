@@ -5,5 +5,3 @@ GOFILES=\
 	code.go\
 
 include $(GOROOT)/src/Make.pkg
-
-#cffileid:32
