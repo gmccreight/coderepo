@@ -6,7 +6,7 @@ window.codeFluentApp.controller("RunnerCtrl", function ($scope, $http) {
   $scope.files = undefined;
   $scope.currentFile = undefined;
   $scope.isRunning = false;
-  $scope.currentTemplate = "factorial_in_haskell";
+  $scope.currentTemplate = "kmp_python";
 
   $scope.init = function() {
     $scope.templateSelected();
