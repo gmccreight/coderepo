@@ -7,6 +7,7 @@ window.codeFluentApp.controller("RunnerCtrl", function ($scope, $http) {
   $scope.currentFile = undefined;
   $scope.isRunning = false;
   $scope.currentTemplate = "kmp_python";
+  $scope.runnerName = "";
 
   $scope.init = function() {
     $scope.templateSelected();
@@ -16,7 +17,10 @@ window.codeFluentApp.controller("RunnerCtrl", function ($scope, $http) {
     var results = [];
     for (var i = 0; i < $scope.files.length; i++) { 
       var file = $scope.files[i];
-      if (file.name  != "Runner") {
+      if (file.name == "Runner") {
+        $scope.runnerName = file.value;
+      }
+      else {
         results.push(file);
       }
     }
@@ -42,6 +46,17 @@ window.codeFluentApp.controller("RunnerCtrl", function ($scope, $http) {
   $scope.setError = function(message) {
     $scope.error = message;
   };
+
+  $scope.showHowWasRun = function() {
+    if ($scope.didPass) {
+      return true;
+    }
+    return false;
+  }
+
+  $scope.howWasRunUrl = function() {
+    return "https://github.com/gmccreight/codefluent/tree/master/runner/runner_containers/" + $scope.runnerName;
+  }
 
   $scope.setDidPass = function(didPass) {
     $scope.didPass = didPass;

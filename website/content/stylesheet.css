@@ -123,6 +123,10 @@ div.clearBoth {
   margin:20px 0;
 }
 
+#runner .howWasRun {
+  margin-top:10px;
+}
+
 #runner .filename {
   margin-top:20px;
   margin-bottom:6px;

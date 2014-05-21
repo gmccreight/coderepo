@@ -25,6 +25,7 @@ title: Runner
     </div>
   </div>
   <div class="clearBoth"></div>
+  <div ng-show="showHowWasRun()" class="howWasRun"><a href="{{howWasRunUrl()}}" target="_new">how was this run?</a></div>
   <div ng-show="hasError()" class="errorDetails">
     {{error}}
   </div>
