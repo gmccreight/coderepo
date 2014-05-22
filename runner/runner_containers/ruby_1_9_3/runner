@@ -1,0 +1,8 @@
+cd code
+ruby unittests.rb 2>&1 | tee /run_results
+
+if [[ `tail -n 1 /run_results | egrep '[1-9][0-9]* tests, [1-9][0-9]* assertions, 0 failures, 0 errors, 0 skips'` ]]; then
+  echo CF_OK
+else
+  echo CF_NOT_OK
+fi
