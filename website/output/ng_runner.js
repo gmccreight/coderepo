@@ -6,7 +6,7 @@ window.codeFluentApp.controller("RunnerCtrl", function ($scope, $http) {
   $scope.files = undefined;
   $scope.currentFile = undefined;
   $scope.isRunning = false;
-  $scope.currentTemplate = "kmp_python";
+  $scope.currentTemplate = "kmp_in_python";
   $scope.runnerName = "";
 
   $scope.init = function() {
