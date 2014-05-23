@@ -150,4 +150,3 @@ void bal_tree_traverse(node *tree, std::vector<node*> & vec) {
         }
     }
 }
-//ogfileid:3

@@ -35,5 +35,3 @@ int Stack::pop() {
     delete popNode;
     return value;
 }
-
-//ogfileid:19
