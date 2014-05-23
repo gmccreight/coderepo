@@ -1,0 +1,7 @@
+cp -a code code_working_dir
+cd code_working_dir
+
+g++ -o code.o -c code.cc
+g++ -I/gtest/include code.cc unittests.cc /gtest/libgtest.a -o unittests -lpthread
+./unittests | tee /run_results
+((tail -n 1 /run_results | egrep -q "PASSED") && echo CF_OK) || echo CF_NOT_OK
