@@ -28,6 +28,12 @@ div.clearBoth {
   clear:both;
 }
 
+.editor { 
+  width:800px;
+  height:200px;
+  margin-top:50px;
+}
+
 #main {
   position: absolute;
 

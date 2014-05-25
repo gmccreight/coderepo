@@ -2,6 +2,7 @@
 <html lang="en" ng-app="CodeFluentApp">
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Code Fluent - Runner</title>
     <link rel="stylesheet" href="/stylesheet.css">
   </head>
@@ -41,6 +42,29 @@
     <textarea ng-model="file.value" spellcheck="false"></textarea>
   </div>
 </div>
+
+<div id="editor1" class="editor">function foo(items) {
+    var x = "All this is syntax highlighted";
+    return x;
+}</div>
+
+<div id="editor2" class="editor">function foo(items) {
+    var x = "All this is syntax highlighted";
+    return x;
+}</div>
+
+<script src="/ace-builds/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor1 = ace.edit("editor1");
+    editor1.setTheme("ace/theme/monokai");
+    editor1.getSession().setMode("ace/mode/javascript");
+</script>
+
+<script>
+    var editor2 = ace.edit("editor2");
+    editor2.setTheme("ace/theme/monokai");
+    editor2.getSession().setMode("ace/mode/javascript");
+</script>
     </div>
     <div id="sidebar">
       <h2>Community</h2>
