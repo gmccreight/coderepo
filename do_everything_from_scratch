@@ -3,6 +3,9 @@
 vagrant destroy -f
 vagrant up
 
+vagrant ssh -c "echo '' >> ~/.bashrc"
+vagrant ssh -c "echo 'cd /vagrant' >> ~/.bashrc"
+
 vagrant ssh -c "cd /vagrant/runner_api; ./installer.sh"
 vagrant ssh -c "cd /vagrant/website;    ./installer.sh"
 vagrant ssh -c "cd /vagrant/runner;     ./installer.sh"
