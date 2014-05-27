@@ -1,0 +1,5 @@
+#!/bin/bash
+
+rsync -av --delete runner runner_api runner.codefluent.us:~
+ssh runner.codefluent.us "cd runner_api; ./installer.sh"
+ssh runner.codefluent.us "cd runner; ./installer.sh"

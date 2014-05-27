@@ -1,0 +1,4 @@
+#!/bin/bash
+
+./meta/runner_codefluent_us/run_installers
+./meta/runner_codefluent_us/update_runners
