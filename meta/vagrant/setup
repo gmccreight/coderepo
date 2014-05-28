@@ -4,6 +4,9 @@
 echo '' >> ~/.bashrc
 echo 'cd /vagrant' >> ~/.bashrc
 
+# Add karma to the PATH
+echo 'export PATH=$PATH:/usr/local/lib/node_modules/karma/bin' >> ~/.bashrc
+
 # Run the AWS setup if there is one
 # (to add the SSH key that will allow you to deploy to ec2)
 [ -f /vagrant/meta/vagrant/.untracked_aws_ssh_setup ] && /vagrant/meta/vagrant/.untracked_aws_ssh_setup
