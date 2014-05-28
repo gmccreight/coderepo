@@ -2,6 +2,8 @@
 .DS_Store
 npm-debug.log
 website/tmp/
-website/untracked_aws_info
 website/crash.log
-.untracked_credential_setup
+
+# Secret information
+website/untracked_aws_info
+meta/vagrant/.untracked_aws_ssh_setup
