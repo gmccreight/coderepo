@@ -2,7 +2,7 @@
 
 (
   ./meta/vagrant/setup
-  cd runner_api; ./installer.sh
-  cd website;    ./installer.sh
-  cd runner;     ./installer.sh
+  cd /vagrant/runner_api; ./installer.sh
+  cd /vagrant/website;    ./installer.sh
+  cd /vagrant/runner;     ./installer.sh
 )
