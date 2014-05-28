@@ -1,0 +1,8 @@
+#!/bin/bash
+
+(
+  ./meta/vagrant/setup
+  cd runner_api; ./installer.sh
+  cd website;    ./installer.sh
+  cd runner;     ./installer.sh
+)

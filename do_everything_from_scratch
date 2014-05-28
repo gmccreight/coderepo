@@ -3,16 +3,5 @@
 vagrant destroy -f
 vagrant up
 
-vagrant ssh -c "echo '' >> ~/.bashrc"
-vagrant ssh -c "echo '[ -f /vagrant/.untracked_credential_setup ] && source /vagrant/.untracked_credential_setup' >> ~/.bashrc"
-vagrant ssh -c "echo 'cd /vagrant' >> ~/.bashrc"
-
-vagrant ssh -c "cd /vagrant/runner_api; ./installer.sh"
-vagrant ssh -c "cd /vagrant/website;    ./installer.sh"
-vagrant ssh -c "cd /vagrant/runner;     ./installer.sh"
-
-(
-  cd runner/build_and_run
-  ./build_and_run_all
-  ./run_all_with_simple_report
-)
+vagrant ssh -c "cd /vagrant; ./meta/full_dev_install"
+vagrant ssh -c "cd /vagrant/runner; ./build_and_run_all_with_simple_report"

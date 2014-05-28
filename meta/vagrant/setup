@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Nice affordance.  cds into the /vagrant directory every time you login
+echo '' >> ~/.bashrc
+echo 'cd /vagrant' >> ~/.bashrc
+
+# Run the AWS setup if there is one
+# (to add the SSH key that will allow you to deploy to ec2)
+[ -f /vagrant/meta/vagrant/.untracked_aws_ssh_setup ] && /vagrant/meta/vagrant/.untracked_aws_ssh_setup
