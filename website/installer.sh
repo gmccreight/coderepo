@@ -7,3 +7,5 @@ sudo apt-get install ruby-dev -y
 sudo gem install fog
 
 sudo npm install karma -g
+sudo npm install karma-jasmine -g
+sudo npm install karma-phantomjs-launcher -g
