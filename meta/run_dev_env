@@ -10,6 +10,14 @@ tmux new-window -tcodefluentDevelopment:1 -n website_run_nanoc_view
 tmux send-keys './website/run_nanoc_view.sh' 'C-m'
 
 tmux new-window -tcodefluentDevelopment:2 -n website_run_nanoc_compile
-tmux send-keys 'cd ./website/; while (true); do nanoc; sleep 0.5; done' 'C-m'
+tmux send-keys 'cd ./website/; while (true); do ./update_code_templates.rb; nanoc; sleep 0.5; done' 'C-m'
+
+tmux new-window -tcodefluentDevelopment:3 -n website_karma
+tmux send-keys 'cd ./website/; karma start' 'C-m'
+
+tmux new-window -tcodefluentDevelopment:4 -n kill_session
+tmux send-keys 'tmux kill-session -t codefluentDevelopment'
+
+tmux new-window -tcodefluentDevelopment:5 -n misc
 
 tmux -2 attach-session -t codefluentDevelopment
