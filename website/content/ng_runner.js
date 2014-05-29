@@ -271,9 +271,9 @@ angular.module('ui.ace', [])
     };
   }]);
 
-window.codeFluentApp = angular.module('CodeFluentApp', ['ui.ace']);
+window.codefluentApp = angular.module('CodefluentApp', ['ui.ace']);
 
-window.codeFluentApp.controller("RunnerCtrl", function ($scope, $http) {
+window.codefluentApp.controller("RunnerCtrl", function ($scope, $http) {
 
   $scope.error = "";
   $scope.files = undefined;
