@@ -323,6 +323,7 @@ window.codefluentApp.controller("RunnerCtrl", function ($scope, RunnerService) {
     // filetype.  Too much work.
 
     var typeFor = {
+      c:"c_cpp",
       cc:"c_cpp",
       clj:"clojure",
       go:"golang",
