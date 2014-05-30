@@ -273,10 +273,22 @@ angular.module('ui.ace', [])
 
 window.codefluentApp = angular.module('CodefluentApp', ['ui.ace']);
 
-window.codefluentApp.service('RunnerWebService', function($http){
+window.codefluentApp.service('BrowserInfo', function(){
+
+  this.windowLocationSearch = function() {
+    return window.location.search;
+  };
+
+  this.windowLocationHostname = function() {
+    return window.location.hostname;
+  };
+
+});
+
+window.codefluentApp.service('RunnerWebService', function($http, BrowserInfo){
 
   this.getUrl = function() {
-    if ( window.location.hostname.match(/codefluent/) ) {
+    if ( BrowserInfo.windowLocationHostname().match(/codefluent/) ) {
       return 'http://runner.codefluent.us/';
     }
     else {
@@ -300,16 +312,31 @@ window.codefluentApp.service('RunnerWebService', function($http){
 
 });
 
-window.codefluentApp.controller("RunnerCtrl", function ($scope, RunnerWebService) {
+window.codefluentApp.service('CodeFilesService', function(BrowserInfo){
+
+  this.initialTemplate = function() {
+    var matches = BrowserInfo.windowLocationSearch().match(/^[?]t=([a-z_]+)$/);
+    if (matches) {
+      return matches[1];
+    }
+    else {
+      return "kmp_in_python";
+    }
+  };
+
+});
+
+window.codefluentApp.controller("RunnerCtrl", function ($scope, CodeFilesService, RunnerWebService) {
 
   $scope.error = "";
   $scope.files = undefined;
   $scope.currentFile = undefined;
   $scope.isRunning = false;
-  $scope.currentTemplate = "kmp_in_python";
+  $scope.currentTemplate = null;
   $scope.runnerName = "";
 
   $scope.init = function() {
+    $scope.currentTemplate = CodeFilesService.initialTemplate();
     $scope.templateSelected();
   };
 
