@@ -273,7 +273,34 @@ angular.module('ui.ace', [])
 
 window.codefluentApp = angular.module('CodefluentApp', ['ui.ace']);
 
-window.codefluentApp.controller("RunnerCtrl", function ($scope, $http) {
+window.codefluentApp.service('RunnerService', function($http){
+
+  this.getUrl = function() {
+    if ( window.location.hostname.match(/codefluent/) ) {
+      return 'http://runner.codefluent.us/';
+    }
+    else {
+      return 'http://localhost:8080/';
+    }
+  };
+
+  this.run = function(data, normalCompletionCallback, serverErrorCallback) {
+
+    var runWasCompletedCallback = function(data, status, headers, config) {
+      if (data.error) {
+        serverErrorCallback(data.error);
+      }
+      else {
+        normalCompletionCallback(data.did_pass, data.stdout, data.stderr);
+      }
+    };
+
+    $http.post(this.getUrl(), data).success(runWasCompletedCallback);
+  };
+
+});
+
+window.codefluentApp.controller("RunnerCtrl", function ($scope, RunnerService) {
 
   $scope.error = "";
   $scope.files = undefined;
@@ -371,32 +398,8 @@ window.codefluentApp.controller("RunnerCtrl", function ($scope, $http) {
   $scope.runCode = function() {
     $scope.resetOutput();
     $scope.setIsRunning(true);
-    var successCallback = function(data, status, headers, config) {
-      $scope.setIsRunning(false);
-      if (data.error) {
-        $scope.setError(data.error);
-      }
-      else {
-        if (data.did_pass) {
-          $scope.setDidPass(true);
-        }
-        else {
-          $scope.setError(data.stdout + data.stderr);
-        }
-      }
-    };
-    var runnerUrl = $scope.getRunnerUrl();
-    $http.post(runnerUrl, $scope.getDataToPost()).success(successCallback);
-  };
 
-  /* [tag:refactor:gem] it would be better if decisions based on where you are are centralized */
-  $scope.getRunnerUrl = function() {
-    if ( window.location.hostname.match(/codefluent/) ) {
-      return 'http://runner.codefluent.us/';
-    }
-    else {
-      return 'http://localhost:8080/';
-    }
+    RunnerService.run($scope.getDataToPost(), this.onRunnerServiceCompletedNormally, this.onRunnerServiceCompletedWithServerError);
   };
 
   $scope.getDataToPost = function() {
@@ -410,5 +413,26 @@ window.codefluentApp.controller("RunnerCtrl", function ($scope, $http) {
   $scope.templateFor = function(name) {
     return window.code_templates[name];
   }
+
+  //--------------------------------------------------------------------------
+  //--------------------------------------------------------------------------
+  // Service callbacks
+  //--------------------------------------------------------------------------
+  //--------------------------------------------------------------------------
+
+  $scope.onRunnerServiceCompletedWithServerError = function(error) {
+    $scope.setIsRunning(false);
+    $scope.setError(error);
+  };
+
+  $scope.onRunnerServiceCompletedNormally = function(didPass, stdout, stderr) {
+    $scope.setIsRunning(false);
+    if (didPass) {
+      $scope.setDidPass(true);
+    }
+    else {
+      $scope.setError(stdout + stderr);
+    }
+  };
  
 });
