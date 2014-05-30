@@ -273,7 +273,7 @@ angular.module('ui.ace', [])
 
 window.codefluentApp = angular.module('CodefluentApp', ['ui.ace']);
 
-window.codefluentApp.service('RunnerService', function($http){
+window.codefluentApp.service('RunnerWebService', function($http){
 
   this.getUrl = function() {
     if ( window.location.hostname.match(/codefluent/) ) {
@@ -300,7 +300,7 @@ window.codefluentApp.service('RunnerService', function($http){
 
 });
 
-window.codefluentApp.controller("RunnerCtrl", function ($scope, RunnerService) {
+window.codefluentApp.controller("RunnerCtrl", function ($scope, RunnerWebService) {
 
   $scope.error = "";
   $scope.files = undefined;
@@ -400,7 +400,7 @@ window.codefluentApp.controller("RunnerCtrl", function ($scope, RunnerService) {
     $scope.resetOutput();
     $scope.setIsRunning(true);
 
-    RunnerService.run($scope.getDataToPost(), this.onRunnerServiceCompletedNormally, this.onRunnerServiceCompletedWithServerError);
+    RunnerWebService.run($scope.getDataToPost(), this.onRunnerWebServiceCompletedNormally, this.onRunnerWebServiceCompletedWithServerError);
   };
 
   $scope.getDataToPost = function() {
@@ -421,12 +421,12 @@ window.codefluentApp.controller("RunnerCtrl", function ($scope, RunnerService) {
   //--------------------------------------------------------------------------
   //--------------------------------------------------------------------------
 
-  $scope.onRunnerServiceCompletedWithServerError = function(error) {
+  $scope.onRunnerWebServiceCompletedWithServerError = function(error) {
     $scope.setIsRunning(false);
     $scope.setError(error);
   };
 
-  $scope.onRunnerServiceCompletedNormally = function(didPass, stdout, stderr) {
+  $scope.onRunnerWebServiceCompletedNormally = function(didPass, stdout, stderr) {
     $scope.setIsRunning(false);
     if (didPass) {
       $scope.setDidPass(true);
