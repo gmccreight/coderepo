@@ -8,7 +8,7 @@ function Node (value) {
   this.pointer = null;
 }
 
-function LinkedList(title, image) {
+function LinkedList() {
   this.length = 0;
   this.head = null;
 }
