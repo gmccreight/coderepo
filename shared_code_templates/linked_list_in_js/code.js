@@ -6,12 +6,12 @@ function Node (value) {
     this.value = "default";
   }
   this.pointer = null;
-};
+}
 
 function LinkedList(title, image) {
   this.length = 0;
   this.head = null;
-};
+}
 
 LinkedList.prototype.append = function(node) {
   if (this.head === null) {
@@ -35,7 +35,7 @@ LinkedList.prototype.list_values = function() {
   else {
     var tmp = this.head;
     values.push(tmp.value);
-    while (tmp.pointer != null) {
+    while (tmp.pointer !== null) {
       tmp = tmp.pointer;
       values.push(tmp.value);
     }
