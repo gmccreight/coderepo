@@ -356,6 +356,7 @@ window.codefluentApp.controller("RunnerCtrl", function ($scope, CodeFilesService
       go:"golang",
       h:"c_cpp",
       hs:"haskell",
+      js:"javascript",
       py:"python",
       rb:"ruby",
       rs:"rust",
