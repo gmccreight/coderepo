@@ -6,30 +6,30 @@ function Node (value) {
     this.value = "default";
   }
   this.pointer = null;
-}
+};
 
 function LinkedList(title, image) {
   this.length = 0;
   this.head = null;
-}
+};
 
 LinkedList.prototype.append = function(node) {
-  if (this.head == null) {
+  if (this.head === null) {
     this.head = node;
     return;
   }
   else {
     var tmp = this.head;
-    while (tmp.pointer != null) {
+    while (tmp.pointer !== null) {
       tmp = tmp.pointer;
     }
     tmp.pointer = node;
   }
-}
+};
 
 LinkedList.prototype.list_values = function() {
   var values = [];
-  if (this.head == null) {
+  if (this.head === null) {
     return [];
   }
   else {
@@ -41,4 +41,4 @@ LinkedList.prototype.list_values = function() {
     }
   }
   return values;
-}
+};
