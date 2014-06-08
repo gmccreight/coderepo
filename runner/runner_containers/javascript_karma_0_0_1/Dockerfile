@@ -11,6 +11,9 @@ RUN apt-get install g++ -y
 # make isn't pre-installed on the EC2 version of Ubuntu
 RUN apt-get install make -y
 
+# python isn't pre-installed on the EC2 version of Ubuntu
+RUN apt-get install python -y
+
 ADD installer_node installer_node
 RUN bash ./installer_node
 
