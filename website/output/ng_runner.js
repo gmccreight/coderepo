@@ -353,6 +353,7 @@ window.codefluentApp.controller("RunnerCtrl", function ($scope, CodeFilesService
       c:"c_cpp",
       cc:"c_cpp",
       clj:"clojure",
+      coffee:"coffee",
       go:"golang",
       h:"c_cpp",
       hs:"haskell",

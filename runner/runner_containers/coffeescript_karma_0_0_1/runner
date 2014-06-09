@@ -1,0 +1,2 @@
+/usr/local/lib/node_modules/karma/bin/karma start --single-run | tee /run_results
+((tail -n 1 /run_results | grep "SUCCESS") && echo CF_OK) || echo CF_NOT_OK
