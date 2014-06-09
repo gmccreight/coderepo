@@ -50,3 +50,4 @@ bool delete_stack(Node **stack) {
     }
 
     return true;
+}
