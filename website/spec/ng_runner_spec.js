@@ -18,6 +18,39 @@ describe("RunnerCtrl", function() {
     });
   });
 
+  describe("KeyMaker", function() {
+
+    var keyMakerService = null;
+
+    beforeEach(function() {
+      inject(function($injector) {
+        keyMakerService = $injector.get('KeyMaker');
+      });
+    });
+
+    it("should get a valid key name for the object", function() {
+      var object = {name:"hello", value:"whatup"};
+      var keyForObject = keyMakerService.getKeyForObject(object);
+      expect(keyForObject).toMatch(/^[0-9a-f]{10}_[0-9a-f]{40}$/);
+    });
+
+    it("should get two different keys for just slightly different objects", function() {
+      var object1 = {name:"hello", value:"whatup"};
+      var keyForObject1 = keyMakerService.getKeyForObject(object1);
+      var object2 = {name:"hello!", value:"whatup"};
+      var keyForObject2 = keyMakerService.getKeyForObject(object2);
+      expect(keyForObject1).toNotEqual(keyForObject2);
+    });
+
+    it("should give the same value when hashing the same object during the same session", function() {
+      var object = {name:"hello", value:"whatup"};
+      var keyForObjectFirstRun = keyMakerService.getKeyForObject(object);
+      var keyForObjectSecondRun = keyMakerService.getKeyForObject(object);
+      expect(keyForObjectSecondRun).toEqual(keyForObjectFirstRun);
+    });
+
+  });
+
   describe("after run", function() {
 
     describe("where the tests passed", function() {
