@@ -21,11 +21,11 @@ deploy to S3, you can deploy using:
 
 TODO... fill in more info
 
-codedata.codefluent.com is an S3 bucket with CORS capabilities.
+codedata.codefluent.us is an S3 bucket with CORS capabilities.
 
     <CORSConfiguration>
      <CORSRule>
-       <AllowedOrigin>http://www.codefluent.com</AllowedOrigin>
+       <AllowedOrigin>http://www.codefluent.us</AllowedOrigin>
        <AllowedMethod>POST</AllowedMethod>
        <AllowedHeader>*</AllowedHeader>
      </CORSRule>
