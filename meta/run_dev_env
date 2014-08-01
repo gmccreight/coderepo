@@ -4,7 +4,7 @@ tmux start-server
 tmux new-session -d -s codefluentDevelopment -n initialWindow
 
 tmux new-window -tcodefluentDevelopment:0 -n runner_api
-tmux send-keys './runner_api/run_server.sh' 'C-m'
+tmux send-keys './runner_api/run_development_server.sh' 'C-m'
 
 tmux new-window -tcodefluentDevelopment:1 -n website_run_nanoc_view
 tmux send-keys './website/run_nanoc_view.sh' 'C-m'
