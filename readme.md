@@ -91,7 +91,7 @@ Let's say you add the following runner container: elixer\_1\_0\_0
 
 To build it
 
-    cd runner; ./docker_build elixer\_1\_0\_0
+    cd runner; ./docker_build elixer_1_0_0
 
 Contributing - Adding a shared code template
 ---
@@ -109,7 +109,7 @@ Then you could make some changes in stack\_in\_python and run it with:
     cd runner/build_and_run; ./run_one stack_in_python
 
 If you want to use your newly created runner container, though, you'll need to
-understand the directory structure a bit better.
+understand the directory structure a bit more.
 
 In `shared_code_templates` add a directory consisting of all the files you
 would like to be able to run in the runner container, and also a `Runner` file
