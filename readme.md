@@ -68,9 +68,59 @@ We do this by running the real programs in Docker containers.
 Contributing
 ---
 
-Codefluent aims to be very easy to contribute to.  It relies very heavily on
-modularity and conventions.  If you follow the conventions your code and its
-unit tests will just work.
+Codefluent aims to be very easy to contribute to.
+
+Contributing - Setup
+---
+There are only two prerequisites, Virtualbox and Vagrant.
+
+Once you have those installed, you can run:
+
+    ./do_everything_from_scratch
+
+It will download an Ubuntu 14.04 base box, install all the software, then run
+the tests.
+
+Contributing - Adding a runner container
+---
+
+In `runner/runner_containers`, add a directory consisting of a Dockerfile,
+installer, and runner.  See any of the existing runner containers as examples.
+
+Let's say you add the following runner container: elixer\_1\_0\_0
+
+To build it
+
+    cd runner; ./docker_build elixer\_1\_0\_0
+
+Contributing - Adding a shared code template
+---
+
+If you just want to add a shared code template that runs in one of the
+pre-existing runner containers, you can just copy one of the directories in
+the shared\_code\_templates directory and make changes to it.
+
+For example, you could
+
+    cd shared_code_templates; cp -a kmp_in_python stack_in_python
+
+Then you could make some changes in stack\_in\_python and run it with:
+
+    cd runner/build_and_run; ./run_one stack_in_python
+
+If you want to use your newly created runner container, though, you'll need to
+understand the directory structure a bit better.
+
+In `shared_code_templates` add a directory consisting of all the files you
+would like to be able to run in the runner container, and also a `Runner` file
+which specifies the name of the runner to use.  In this case, let's make
+a shared code template called binary\_tree\_in\_elixer.  The `Runner` file
+consists of elixer\_1\_0\_0
+
+Once you've done that, you can run the code in the container with the following
+command:
+
+    cd runner/build_and_run; ./run_one binary_tree_in_elixer
 
 Meta-harness
 ---
