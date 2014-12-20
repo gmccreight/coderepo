@@ -1,0 +1,5 @@
+#!/bin/bash
+
+rsync -av --delete runner runner_api runner.coderepo.io:~
+ssh runner.coderepo.io "cd runner_api; ./installer.sh"
+ssh runner.coderepo.io "cd runner; ./installer.sh"

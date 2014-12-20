@@ -4,7 +4,7 @@ describe("RunnerCtrl", function() {
   var controller = null;
 
   beforeEach(function() {
-    module('CodefluentApp');
+    module('CoderepoApp');
     inject(function($injector) {
 
       $rootScope = $injector.get('$rootScope');

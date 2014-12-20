@@ -15,17 +15,17 @@ If the code templates have been updated, you'll need to load them using:
 If you have the untracked\_aws\_info file containing the secrets required to
 deploy to S3, you can deploy using:
 
-    ./codefluent_deploy.sh
+    ./coderepo_deploy.sh
 
 ### How data is stored
 
 TODO... fill in more info
 
-codedata.codefluent.us is an S3 bucket with CORS capabilities.
+codedata.coderepo.io is an S3 bucket with CORS capabilities.
 
     <CORSConfiguration>
      <CORSRule>
-       <AllowedOrigin>http://www.codefluent.us</AllowedOrigin>
+       <AllowedOrigin>http://www.coderepo.io</AllowedOrigin>
        <AllowedMethod>POST</AllowedMethod>
        <AllowedHeader>*</AllowedHeader>
      </CORSRule>

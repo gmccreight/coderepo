@@ -447,9 +447,9 @@ angular.module('ui.ace', [])
     };
   }]);
 
-window.codefluentApp = angular.module('CodefluentApp', ['ui.ace']);
+window.coderepoApp = angular.module('CoderepoApp', ['ui.ace']);
 
-window.codefluentApp.service('Support', function(){
+window.coderepoApp.service('Support', function(){
 
   this.hashCodeForString = function(string) {
     return Sha1.hash(string);
@@ -469,7 +469,7 @@ window.codefluentApp.service('Support', function(){
 
 });
 
-window.codefluentApp.service('KeyMaker', function(Support){
+window.coderepoApp.service('KeyMaker', function(Support){
 
   this.persistedUniqCodePerPageLoad = undefined; 
 
@@ -496,7 +496,7 @@ window.codefluentApp.service('KeyMaker', function(Support){
 
 });
 
-window.codefluentApp.service('BrowserInfo', function(){
+window.coderepoApp.service('BrowserInfo', function(){
 
   this.windowLocationSearch = function() {
     return window.location.search;
@@ -508,11 +508,11 @@ window.codefluentApp.service('BrowserInfo', function(){
 
 });
 
-window.codefluentApp.service('RunnerWebService', function($http, BrowserInfo){
+window.coderepoApp.service('RunnerWebService', function($http, BrowserInfo){
 
   this.getUrl = function() {
-    if ( BrowserInfo.windowLocationHostname().match(/codefluent/) ) {
-      return 'http://runner.codefluent.us/';
+    if ( BrowserInfo.windowLocationHostname().match(/coderepo/) ) {
+      return 'http://runner.coderepo.io/';
     }
     else {
       return 'http://localhost:8080/';
@@ -535,7 +535,7 @@ window.codefluentApp.service('RunnerWebService', function($http, BrowserInfo){
 
 });
 
-window.codefluentApp.service('CodeFilesService', function(BrowserInfo){
+window.coderepoApp.service('CodeFilesService', function(BrowserInfo){
 
   this.initialTemplate = function() {
     var matches = BrowserInfo.windowLocationSearch().match(/^[?]t=([a-z_]+)$/);
@@ -549,7 +549,7 @@ window.codefluentApp.service('CodeFilesService', function(BrowserInfo){
 
 });
 
-window.codefluentApp.controller("RunnerCtrl", function ($scope, CodeFilesService, RunnerWebService) {
+window.coderepoApp.controller("RunnerCtrl", function ($scope, CodeFilesService, RunnerWebService) {
 
   $scope.error = "";
   $scope.files = undefined;
@@ -637,7 +637,7 @@ window.codefluentApp.controller("RunnerCtrl", function ($scope, CodeFilesService
   }
 
   $scope.howWasRunUrl = function() {
-    return "https://github.com/gmccreight/codefluent/tree/master/runner/runner_containers/" + $scope.runnerName;
+    return "https://github.com/gmccreight/coderepo/tree/master/runner/runner_containers/" + $scope.runnerName;
   }
 
   $scope.setDidPass = function(didPass) {

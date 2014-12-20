@@ -1,0 +1,4 @@
+#!/bin/bash
+
+./meta/runner_coderepo_io/run_installers
+./meta/runner_coderepo_io/update_runners

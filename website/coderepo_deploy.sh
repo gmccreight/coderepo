@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# This script is used to deploy codefluent to S3.
+# This script is used to deploy coderepo to S3.
 # Since the yaml file can't use ENV data we use a workaround of concatenating
 # secret data from an untracked file.
 

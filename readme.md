@@ -1,11 +1,11 @@
-Codefluent
+Coderepo
 ====
-[Codefluent](http://github.com/gmccreight/codefluent) is an open source
+[Coderepo](http://github.com/gmccreight/coderepo) is an open source
 polyglot algorithm and data structure learning platform.  If you're impatient,
-check out [codefluent.us](http://www.codefluent.us), then come back here to
+check out [coderepo.io](http://www.coderepo.io), then come back here to
 read all about it.
 
-Codefluent aims to have thousands of fully-worked, tested, and immediately
+Coderepo aims to have thousands of fully-worked, tested, and immediately
 runnable examples of algorithms and data structures in an exhaustive variety of
 languages.  It also aims to be ridiculously, even magically, easy to use in a
 classroom setting.  In short, it aims to be the first place developers think to
@@ -33,11 +33,11 @@ We also have unfinished (but executable) code examples in:
 Usage
 ---
 
-Codefluent can be used in several ways, which are outlined here.  We describe
+Coderepo can be used in several ways, which are outlined here.  We describe
 each usage in more detail later in the readme.
 
 * Standard Usage
-    * The website, [codefluent.us](http://www.codefluent.us), provides a
+    * The website, [coderepo.io](http://www.coderepo.io), provides a
       try-in-the-browser interface.
 * Contributor Usage
     * The "do\_everything\_from\_scratch" command will create an Ubuntu 14.04
@@ -68,7 +68,7 @@ We do this by running the real programs in Docker containers.
 Contributing
 ---
 
-Codefluent aims to be very easy to contribute to.
+Coderepo aims to be very easy to contribute to.
 
 Contributing - Setup
 ---
@@ -125,7 +125,7 @@ command:
 Meta-harness
 ---
 
-Many test harnesses use different reporting formats.  Codefluent gets around
+Many test harnesses use different reporting formats.  Coderepo gets around
 this problem by using custom regex matchers for each reporting format, allowing
 us to create a meta-harness that helps us ensure that all the tests for all the
 code examples pass.  Having such a harness in place allows us to release new
