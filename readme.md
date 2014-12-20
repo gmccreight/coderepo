@@ -1,18 +1,13 @@
 Coderepo
 ====
 [Coderepo](http://github.com/gmccreight/coderepo) is an open source
-polyglot algorithm and data structure learning platform.  If you're impatient,
-check out [coderepo.io](http://www.coderepo.io), then come back here to
-read all about it.
+polyglot algorithm and data structure code repository.  If you're impatient,
+check out [coderepo.io](http://www.coderepo.io).
 
 Coderepo aims to have thousands of fully-worked, tested, and immediately
-runnable examples of algorithms and data structures in an exhaustive variety of
-languages.  It also aims to be ridiculously, even magically, easy to use in a
-classroom setting.  In short, it aims to be the first place developers think to
-go to learn a new language, algorithm, or data structure.
+runnable code modules in an exhaustive variety of languages.  
 
-You can currently try data structures and algorithms in the following
-languages:
+We currently have code in the following languages:
 
 * C
 * C++
@@ -22,13 +17,7 @@ languages:
 * Javascript
 * Python
 * Ruby
-
-We also have unfinished (but executable) code examples in:
-
-* Lua
-* Objective-C
-* Go
-* Scala
+* Rust
 
 Usage
 ---
@@ -46,23 +35,25 @@ each usage in more detail later in the readme.
 Rationale
 ---
 
-Stack Overflow and Rosetta Code, for all their greatness, provide code snippets
-without context.  Often those snippets require a particular version of an
-interpreter and various tough-to-satisfy prerequisites.  Even if your setup is
-perfect, the code often contains small typos and logical errors that cause bugs
-because the code isn't automatically tested.  People who are learning a new
-language are the least well equipped to handle these often obtuse errors.
+Stack Overflow and Rosetta Code are both amazing, but they often provide code
+snippets without context.  Those snippets require an implied version of
+an interpreter and various tough-to-satisfy prerequisites.  Even if your setup
+is perfect, the code often contains small typos and logical errors that cause
+bugs because the code isn't automatically tested.
 
-Tests are as important as code, and we treat them that way.  All code examples
-have tests.
+Having tests for the code has several advantages:  First, the tests act as a
+client of the code, ensuring that it works.  Secondly, the tests can
+demonstrate to the audience how the code is intended to work, acting as a
+specification.  Finally, the tests serve as an example of how testing can
+be done in the language.
 
 Approach - Hosted Version
 ---
 
 Unlike most learn-in-the-browser sites, we don't aim to provide an
-approximation of a single language in a REPL in the browser, rather we aim to
+approximation of languages in a REPL in the browser, rather we aim to
 provide real languages running real programs with real tests in the browser.
-We do this by running the real programs in Docker containers.
+We accomplish this by running the real programs in Docker containers.
 
 
 Contributing
@@ -129,5 +120,4 @@ Many test harnesses use different reporting formats.  Coderepo gets around
 this problem by using custom regex matchers for each reporting format, allowing
 us to create a meta-harness that helps us ensure that all the tests for all the
 code examples pass.  Having such a harness in place allows us to release new
-versions of the full stack quickly and without fear of regressions.  It will
-also allow us to vet new contributions quickly.
+versions of the full stack quickly and without fear of regressions.
