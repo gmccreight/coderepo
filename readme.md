@@ -13,6 +13,7 @@ We currently have code in the following languages:
 * C++
 * Clojure
 * Coffeescript
+* Go
 * Haskell
 * Javascript
 * Python
