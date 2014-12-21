@@ -1,6 +1,6 @@
 ### Developing
 
-    ./run_nanoc.sh
+    ./run_nanoc_view.sh
 
 In another terminal tab, you can do (or look into a guard version, which is better):
 
