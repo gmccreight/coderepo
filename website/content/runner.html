@@ -9,29 +9,29 @@ title: Runner
 <script src="../code_templates.js" type="text/javascript"></script>
 <script src="../ng_runner.js" type="text/javascript"></script>
 
-<div id="runner" ng-controller="RunnerCtrl" ng-init="init()">
-  <div class="selectTemplate">
+<div id="runner-page" ng-controller="RunnerCtrl" ng-init="init()">
+  <div class="select-template">
     <select ng-model="currentTemplate" ng-options="templateName for templateName in codeTemplateNames()" ng-change="templateSelected()"></select>
   </div>
-  <div ng-click="runCode()" class="runCodeBtn">Run The Code</div>
-  <div class="runStatus">
-    <div ng-show="isRunning" class="running">
+  <div ng-click="runCode()" class="run-code-btn">Run The Code</div>
+  <div class="run-status">
+    <div ng-show="isRunning" class="is-running">
       RUN
     </div>
-    <div ng-show="didPass" class="didPass">
+    <div ng-show="didPass" class="did-pass">
       PASS
     </div>
-    <div ng-show="hasError()" class="error">
+    <div ng-show="hasError()" class="did-error">
       ERROR
     </div>
   </div>
-  <div class="clearBoth"></div>
-  <div ng-show="showHowWasRun()" class="howWasRun"><a href="{{howWasRunUrl()}}" target="_new">how was this run?</a></div>
-  <div ng-show="hasError()" class="errorDetails">
+  <div class="clear-both"></div>
+  <div ng-show="showHowWasRun()" class="how-was-run"><a href="{{howWasRunUrl()}}" target="_new">how was this run?</a></div>
+  <div ng-show="hasError()" class="error-details">
     {{error}}
   </div>
   <div ng-repeat="file in editableFiles()">
-    <div class="filename">
+    <div class="file-name-header">
       {{file.name}}
     </div>
     <div ui-ace="{ mode:'{{typeForFile(file.name)}}', onLoad:aceLoaded, onChange:aceChanged}" ng-model="file.value"></div>

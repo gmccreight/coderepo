@@ -16,127 +16,18 @@ a {
 
 a:link,
 a:visited {
-  color: #f30;
+  color: #6FB2CB;
 }
 
 a:hover {
-  color: #f90;
+  color: #5FA2BB;
 }
 
-div.clearBoth {
+div.clear-both {
   clear:both;
 }
 
-#main {
-  position: absolute;
-
-  top: 40px;
-  left: 280px;
-
-  width: 500px;
-}
-
-#main h1 {
-  font-size: 40px;
-  font-weight: normal;
-
-  line-height: 40px;
-
-  letter-spacing: -1px;
-}
-
-#main p {
-  margin: 20px 0;
-
-  font-size: 15px;
-
-  line-height: 20px;
-}
-
-#main ul, #main ol {
-  margin: 20px;
-}
-
-#main li {
-  font-size: 15px;
-
-  line-height: 20px;
-}
-
-#main ul li {
-  list-style-type: square;
-}
-
-#runner {
-  width:800px;
-}
-
-#runner .selectTemplate {
-  float:left;
-}
-
-#runner .selectTemplate select {
-  width:268px;
-  padding:5px;
-  font-size:16px;
-  line-height:1;
-  border:0;
-  border-radius:6px;
-  height:42px;
-}
-
-#runner .selectTemplate select:hover {
-  cursor:pointer;
-}
-
-#runner .runCodeBtn {
-  background-color:#F7AD3C;
-  padding:10px;
-  border: 2px solid #E79D2C;
-  border-radius:6px;
-  float:left;
-  margin-left:20px;
-}
-
-#runner .runCodeBtn:hover {
-  background-color:#FFBD4C;
-  cursor:pointer;
-}
-
-#runner .runStatus {
-  float:left;
-  font-size:20px;
-  padding-top:10px;
-  margin-left:18px;
-}
-
-#runner .runStatus .didPass {
-  color:green;
-}
-
-#runner .runStatus .error {
-  color:red;
-}
-
-#runner .errorDetails {
-  margin:20px 0;
-}
-
-#runner .howWasRun {
-  margin-top:10px;
-}
-
-#runner .filename {
-  margin-top:20px;
-  margin-bottom:6px;
-  color:#666;
-}
-
-#runner .ace_editor {
-  height:300px;
-}
-
-#sidebar {
+#sidebar-wrapper {
   position: absolute;
 
   top: 40px;
@@ -150,7 +41,7 @@ div.clearBoth {
   text-align: right;
 }
 
-#sidebar h2 {
+#sidebar-wrapper h2 {
   text-transform: uppercase;
 
   font-size: 13px;
@@ -162,14 +53,123 @@ div.clearBoth {
   line-height: 20px;
 }
 
-#sidebar ul {
+#sidebar-wrapper ul {
   list-style-type: none;
 
   margin: 20px 0;
 }
 
-#sidebar li {
+#sidebar-wrapper li {
   font-size: 14px;
 
   line-height: 20px;
+}
+
+#main-wrapper {
+  position: absolute;
+
+  top: 40px;
+  left: 280px;
+
+  width: 500px;
+}
+
+#main-wrapper h1 {
+  font-size: 40px;
+  font-weight: normal;
+
+  line-height: 40px;
+
+  letter-spacing: -1px;
+}
+
+#main-wrapper p {
+  margin: 20px 0;
+
+  font-size: 15px;
+
+  line-height: 20px;
+}
+
+#main-wrapper ul, #main-wrapper ol {
+  margin: 20px;
+}
+
+#main-wrapper li {
+  font-size: 15px;
+
+  line-height: 20px;
+}
+
+#main-wrapper ul li {
+  list-style-type: square;
+}
+
+#runner-page {
+  width:800px;
+}
+
+#runner-page .select-template {
+  float:left;
+}
+
+#runner-page .select-template select {
+  width:268px;
+  padding:5px;
+  font-size:16px;
+  line-height:1;
+  border:0;
+  border-radius:6px;
+  height:42px;
+}
+
+#runner-page .select-template select:hover {
+  cursor:pointer;
+}
+
+#runner-page .run-code-btn {
+  background-color:#F7AD3C;
+  padding:10px;
+  border: 2px solid #E79D2C;
+  border-radius:6px;
+  float:left;
+  margin-left:20px;
+}
+
+#runner-page .run-code-btn:hover {
+  background-color:#FFBD4C;
+  cursor:pointer;
+}
+
+#runner-page .run-status {
+  float:left;
+  font-size:20px;
+  padding-top:10px;
+  margin-left:18px;
+}
+
+#runner-page .run-status .did-pass {
+  color:green;
+}
+
+#runner-page .run-status .did-error {
+  color:red;
+}
+
+#runner-page .error-details {
+  margin:20px 0;
+}
+
+#runner-page .how-was-run {
+  margin-top:10px;
+}
+
+#runner-page .file-name-header {
+  margin-top:20px;
+  margin-bottom:6px;
+  color:#666;
+}
+
+#runner-page .ace_editor {
+  height:300px;
 }
